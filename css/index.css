@@ -1,0 +1,53 @@
+*{
+    list-style: none;
+    padding: 0;
+    margin:0;
+}
+.box{
+    margin:50px auto;
+    width:25%;
+    height: 100%;
+    border: 3px solid #ccc;
+    position: relative;
+    overflow: hidden;
+}
+.swiper{
+    width:1000%;
+    font-size:80px;
+    text-align: center;
+    line-height: 250px;
+    color: white;
+}
+.swiper li{
+    float: left;
+    width:10%;
+}
+.swiper>li:nth-child(1){
+    background-color: green;
+}
+.swiper>li:nth-child(2){
+    background-color: red;
+}
+.swiper>li:nth-child(3){
+    background-color: blue;
+}
+.swiper>li:nth-child(4){
+    background-color: yellow;
+}
+.swiper>li:nth-child(5){
+    background-color: green;
+}
+
+.num{
+     position: absolute;
+     bottom:15px;
+     left:120px;
+}
+.num li{
+    float: left;
+    margin: 0 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: orange;
+}
