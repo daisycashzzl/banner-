@@ -43,11 +43,12 @@ window.onload = function(){
 
         //完成无缝滚动 判断index是否越界
         banner.addEventListener('transitionEnd',function(){
-            if(index>=5){
+            if(index>=4){
                 index=0;
                 removeTransition();
                 translateX(-W*index);
             }
+            setPoint(index);
         });
         banner.addEventListener('webkitTransitionEnd',function(){
             if(index>=4){
@@ -55,16 +56,20 @@ window.onload = function(){
                 removeTransition();
                 translateX(-W*index);
             }
+            setPoint(index);
         });
 
-//封装复用
-        function bindTransitionEnd(obj,callback){
-            if(typeof obj=='object'){
-                obj.addEventListener('transitionEnd',function(){
-                    if(callback){
-                        callback();
-                    }
-                })
-            }
-        };
-   }
+//-------------------3-角标 切换------------------------
+  //index 表示当前播放图的索引值
+  function setPoint(index){
+    var lis=document.querySelectorAll('.num li');
+    //排他
+    //先排除所有的
+    for(var i=0;i<lis.length;i++){
+      lis[i].classList.remove('active');
+      console.log(lis[i]);
+    }
+    //显示自己
+    lis[index].classList.add('active');
+  }
+ }
